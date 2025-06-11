@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0arfnrr354do"]
+
+[ext_resource type="PackedScene" uid="uid://cr3240hgkaxb" path="res://scenes/game_manager.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://cg0echnr31w1n" path="res://icon.svg" id="2_0wfyh"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game Manager" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+layout_mode = 0
+offset_right = 155.0
+offset_bottom = 107.0
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(28, 129)
+scale = Vector2(0.671875, 0.421875)
+texture_normal = ExtResource("2_0wfyh")
+texture_pressed = ExtResource("2_0wfyh")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(28, 210)
+scale = Vector2(0.671875, 0.421875)
+texture_normal = ExtResource("2_0wfyh")
+texture_pressed = ExtResource("2_0wfyh")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(27, 275)
+scale = Vector2(0.671875, 0.421875)
+texture_normal = ExtResource("2_0wfyh")
+texture_pressed = ExtResource("2_0wfyh")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(27, 344)
+scale = Vector2(0.671875, 0.421875)
+texture_normal = ExtResource("2_0wfyh")
+texture_pressed = ExtResource("2_0wfyh")
+
+[connection signal="color_changed" from="ColorPickerButton" to="Game Manager" method="_on_color_picker_button_color_changed"]
+[connection signal="pressed" from="TouchScreenButton" to="Game Manager" method="_on_brush_button_pressed"]
+[connection signal="pressed" from="TouchScreenButton2" to="Game Manager" method="_on_ereaser_button_pressed"]
